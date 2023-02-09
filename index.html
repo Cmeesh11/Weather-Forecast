@@ -20,30 +20,89 @@
     </nav>
     <main class="container mt-5">
       <div class="row">
-        <form class="col-12 col-md-3">
-          <input aria-label="search" placeholder="Enter City Name" />
-          <button class="btn btn-primary mt-2">Search</button>
-        </form>
+        <div id="row1" class="col-12 col-md-3">
+          <form id="form">
+            <input id="search-box" type="text" aria-label="search" placeholder="Enter City Name" />
+            <button class="btn btn-primary mt-2">Search</button>
+          </form>
+          <div class="container border border-dark mt-3">Ottowa</div>
+        </div>
         <div id="row2" class="col-12 col-md-9">
-          <div class="col-12 col-md-9">
-            <section class="row border border-dark-subtle pt-3 pb-3 mx-auto">
-              <h2 class="col-12 col-lg-5">City Name</h2>
-              <h3 class="col-12 col-lg-2">
-                Temp:
-                <span>50F</span>
-              </h3>
-              <h3 class="col-12 col-lg-2">
-                Wind:
-                <span>75mph</span>
-              </h3>
-              <h3 class="col-12 col-lg-2">
-                Humidity:
-                <span>50%</span>
-              </h3>
-            </section>
-          </div>
-          <section class="col-12 col-md-9 container">
+          <section class="row border border-dark-subtle bg-dark-subtle pt-3 pb-3 m-0">
+            <h2 class="city-name col-12 col-lg-5">City Name</h2>
+            <img id="current-icon"></img>
+            <h3 id="current-temp" class="col-12 col-lg-2">
+              Temp:
+              <span>50F</span>
+            </h3>
+            <h3 id="current-wind" class="col-12 col-lg-2">
+              Wind:
+              <span>75mph</span>
+            </h3>
+            <h3 id="current-humidity" class="col-12 col-lg-2">
+              Humidity:
+              <span>50%</span>
+            </h3>
+          </section>
+          <section class="container">
             <h3>5-Day Forecast</h3>
+            <section id="card-container" class="row">
+              <div class="card col-12 col-md-2 ">
+                <div class="card-body">
+                  <h3 class="card-title">Date</h3>
+                  <i id="weather-type" class="card-subtitle">Picture of Sun</i>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Temp:</li>
+                    <li class="list-group-item">Wind:</li>
+                    <li class="list-group-item">Humidity:</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="card col-12 col-md-2">
+                <div class="card-body">
+                  <h3 class="card-title">Date</h3>
+                  <i id="weather-type" class="card-subtitle">Picture of Sun</i>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Temp:</li>
+                    <li class="list-group-item">Wind:</li>
+                    <li class="list-group-item">Humidity:</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="card col-12 col-md-2">
+                <div class="card-body">
+                  <h3 class="card-title">Date</h3>
+                  <i id="weather-type" class="card-subtitle">Picture of Sun</i>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Temp:</li>
+                    <li class="list-group-item">Wind:</li>
+                    <li class="list-group-item">Humidity:</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="card col-12 col-md-2">
+                <div class="card-body">
+                  <h3 class="card-title">Date</h3>
+                  <i id="weather-type" class="card-subtitle">Picture of Sun</i>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Temp:</li>
+                    <li class="list-group-item">Wind:</li>
+                    <li class="list-group-item">Humidity:</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="card col-12 col-md-2">
+                <div class="card-body">
+                  <h3 class="card-title">Date</h3>
+                  <i id="weather-type" class="card-subtitle">Picture of Sun</i>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Temp:</li>
+                    <li class="list-group-item">Wind:</li>
+                    <li class="list-group-item">Humidity:</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
           </section>
         </div>
       </div>
@@ -54,5 +113,6 @@
       integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
       crossorigin="anonymous"
     ></script>
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>
