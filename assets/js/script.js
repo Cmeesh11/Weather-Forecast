@@ -6,6 +6,10 @@ var mainIcon = document.querySelector("#current-icon");
 var mainTemp = document.querySelector("#current-temp");
 var mainWind = document.querySelector("#current-wind");
 var mainHumidity = document.querySelector("#current-humidity");
+var fiveTemp = document.querySelector(".temp");
+var fiveWind = document.querySelector(".wind");
+var fiveHumid = document.querySelector(".humid");
+
 
 var APIKey = "1ce1940be26fc8ed7cdbc6fcdac3d09e";
 
@@ -55,9 +59,9 @@ form.addEventListener("submit", function (event) {
     .then((data) => {
       // Looping over each card
       console.log(data);
-      for (var i = 0; i < cardContainer.childElementCount; i++) {
+      cardContainer.forEach(function(data) {
         var temp = data.list[1 + i * 8].main.temp;
-        cardContainer.item(i).textContent = temp;
-      }
+        fiveTemp.textContent = "Temp: " + temp;
+      })
     });
 });
