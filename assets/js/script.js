@@ -40,7 +40,7 @@ function current() {
       var currentWind = data.wind.speed;
       var currentHumidity = data.main.humidity;
       var currentIconId = data.weather[0].icon;
-      var currentDateUnix = data.dt
+      var currentDateUnix = data.dt;
       var date = new Date(currentDateUnix * 1000);
       var day = date.getDate();
       var month = date.getMonth();
@@ -53,6 +53,7 @@ function current() {
       mainIcon.setAttribute("style", "max-width: 5rem;");
       mainIcon.setAttribute("src", currentIconLink);
 
+      // Changing values for the current day
       city.textContent = cityName;
       currentDate.textContent = formattedDate;
       mainTemp.textContent = "Temp: " + currentTemp + "F";
@@ -63,6 +64,7 @@ function current() {
 }
 
 function forecast() {
+  // Sets cityName to be equal to the value the user entered
   var cityName = searchBox.value;
   var forecastURL =
     "https://api.openweathermap.org/data/2.5/forecast?q=" +
@@ -121,6 +123,7 @@ function forecast() {
         liWind.textContent = "Wind " + wind + "mph";
         liHumid.textContent = "Humidity " + humidity + "%";
 
+        // Appending elements
         container.appendChild(divCard);
         divCard.appendChild(divCardBody);
         divCardBody.appendChild(cardTitle);
@@ -133,7 +136,7 @@ function forecast() {
       return;
     });
 }
-
+// Lists entered cities
 function list() {
   var listCity = document.createElement("button");
   listCity.textContent = searchBox.value;
@@ -156,10 +159,12 @@ form.addEventListener("submit", function (event) {
   event.preventDefault();
   // Clears any existing forecast
   container.innerHTML = "";
+  // Waits for current and forecast to complete their promises, then executes list
   Promise.all([current(), forecast()]).then(() => list());
 
 });
 
+// Regenerates the statistics for the city name the user clicks on
 row1.addEventListener("click", function(event) {
   var element = event.target;
   if (element.matches(".list-button")) {
