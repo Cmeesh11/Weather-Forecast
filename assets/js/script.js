@@ -18,6 +18,7 @@ var fiveTemp = document.querySelector(".temp");
 var fiveWind = document.querySelector(".wind");
 var fiveHumid = document.querySelector(".humid");
 
+var cities = [];
 var APIKey = "1ce1940be26fc8ed7cdbc6fcdac3d09e";
 
 function current() {
@@ -140,6 +141,11 @@ function forecast() {
 function list() {
   var listCity = document.createElement("button");
   listCity.textContent = searchBox.value;
+  // Pushing searchbox value to cities array, then storing array in localStorage
+  cities.push(searchBox.value);
+  console.log(cities);
+  localStorage.setItem("Cities", JSON.stringify(cities));
+  // Checking to see if the div and ul elements already exist, then appending them
   if (!row1.children[1]) {
     cityList.setAttribute(
       "style",
@@ -148,11 +154,33 @@ function list() {
     row1.appendChild(cityListContainer);
     cityListContainer.appendChild(cityList);
   }
+  // Sets classes for list item, then appends it to the ul
   listCity.setAttribute("class", "border border-dark-subtle mt-2 list-button");
   cityList.appendChild(listCity);
   // Clears search term
   searchBox.value = "";
 }
+
+function renderCities() {
+  // Grabbing the cities array from local storage
+  var citiesArray = JSON.parse(localStorage.getItem("Cities", cities));
+  // Create div and ul if they don't exist
+  if (!row1.children[1]) {
+    cityList.setAttribute(
+      "style",
+      "list-style: none; padding-left: 0; margin-top: 1rem;")
+    row1.appendChild(cityListContainer);
+    cityListContainer.appendChild(cityList);
+  }
+  for (var i = 0; i < citiesArray.length; i++) {
+    // Creates button
+    var listCity = document.createElement("button");
+    // Sets classes for button, then appends it to the ul
+    listCity.setAttribute("class", "border border-dark-subtle mt-2 list-button");
+    listCity.textContent = citiesArray[i];
+    cityList.appendChild(listCity);
+    }
+  }
 
 // Listens for form submit, fetches current day URL and 5 day forecast URL
 form.addEventListener("submit", function (event) {
@@ -175,3 +203,7 @@ row1.addEventListener("click", function(event) {
     forecast();
   }
 })
+// Running the re-render if the cities object in local storage has contents
+if (JSON.parse(localStorage.getItem("Cities", cities)) !== null) {
+  renderCities();
+}
