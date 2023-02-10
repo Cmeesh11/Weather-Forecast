@@ -19,90 +19,26 @@
       <img id="sun" class="m-2" src="./assets/images/sunshine.png" />
     </nav>
     <main class="container mt-5">
-      <div class="row">
+      <div id="row" class="row">
         <div id="row1" class="col-12 col-md-3">
           <form id="form">
             <input id="search-box" type="text" aria-label="search" placeholder="Enter City Name" />
             <button class="btn btn-primary mt-2">Search</button>
           </form>
-          <div class="container border border-dark mt-3">Ottowa</div>
         </div>
         <div id="row2" class="col-12 col-md-9">
           <section class="row border border-dark-subtle bg-dark-subtle pt-3 pb-3 m-0">
-            <h2 class="city-name col-12 col-lg-5">City Name</h2>
+            <h2 class="city-name col-12 col-lg-5">Enter a city name</h2>
+            <h3 id="current-date"></h3>
             <img id="current-icon"></img>
             <h3 id="current-temp" class="col-12 col-lg-2">
-              Temp:
-              <span>50F</span>
             </h3>
             <h3 id="current-wind" class="col-12 col-lg-2">
-              Wind:
-              <span>75mph</span>
             </h3>
             <h3 id="current-humidity" class="col-12 col-lg-2">
-              Humidity:
-              <span>50%</span>
             </h3>
           </section>
-          <section class="container">
-            <h3>5-Day Forecast</h3>
-            <section id="card-container" class="row">
-              <div class="card col-12 col-md-2 ">
-                <div class="card-body">
-                  <h3 class="card-title">Date</h3>
-                  <i id="weather-type" class="card-subtitle">Picture of Sun</i>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item temp">Temp:</li>
-                    <li class="list-group-item wind">Wind:</li>
-                    <li class="list-group-item humidity">Humidity:</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="card col-12 col-md-2">
-                <div class="card-body">
-                  <h3 class="card-title">Date</h3>
-                  <i id="weather-type" class="card-subtitle">Picture of Sun</i>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item temp">Temp:</li>
-                    <li class="list-group-item wind">Wind:</li>
-                    <li class="list-group-item humidity">Humidity:</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="card col-12 col-md-2">
-                <div class="card-body">
-                  <h3 class="card-title">Date</h3>
-                  <i id="weather-type" class="card-subtitle">Picture of Sun</i>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item temp">Temp:</li>
-                    <li class="list-group-item wind">Wind:</li>
-                    <li class="list-group-item humidity">Humidity:</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="card col-12 col-md-2">
-                <div class="card-body">
-                  <h3 class="card-title">Date</h3>
-                  <i id="weather-type" class="card-subtitle">Picture of Sun</i>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item temp">Temp:</li>
-                    <li class="list-group-item wind">Wind:</li>
-                    <li class="list-group-item humidity">Humidity:</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="card col-12 col-md-2">
-                <div class="card-body">
-                  <h3 class="card-title">Date</h3>
-                  <i id="weather-type" class="card-subtitle">Picture of Sun</i>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item temp">Temp:</li>
-                    <li class="list-group-item wind">Wind:</li>
-                    <li class="list-group-item humidity">Humidity:</li>
-                  </ul>
-                </div>
-              </div>
-            </section>
+          <section id="container" class="container row">
           </section>
         </div>
       </div>

@@ -9,6 +9,10 @@
   flex-direction: column;
 }
 
+#city-list-container {
+  display: none;
+}
+
 .card {
   width: 10rem;
 }
